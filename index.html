@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,11 +10,6 @@
 
     <script src="script.js"></script>
     <style>
-        /* Existing styles */
-        .card {
-            /* Your card styles */
-        }
-
         /* Add some styling for the jumping effect */
         .jumping-no {
             animation: jump 0.5s ease-out;
@@ -30,26 +27,24 @@
             }
         }
     </style>
+</head>
+<body>
+
+    <div id="mainPanel" class="card">
+        <button onclick="showYesMessage()">Yes</button>
+        <button onclick="showNoMessage()">No</button>
+    </div>
+
+    <div id="noOptionPanel" class="card" style="display: none;">
+        <!-- Content for the "No" panel -->
+    </div>
+
+    <div id="catDancePanel" class="card" style="display: none;">
+        <!-- Content for the "Yes" panel with cat dance -->
+        <img src="https://media0.giphy.com/media/qFmdpUKAFZ6rMobzzu/200w.gif?cid=6c09b952wyeqq5x55iag3y0cw9t1hcy8lsjb7uuqp1fvom3z&ep=v1_gifs_search&rid=200w.gif&ct=g" alt="Cute Cat Dance">
+    </div>
 
     <script>
-        // Existing JavaScript code
-        function showYesMessage() {
-            // Your existing "Yes" button logic
-        }
-
-        function showNoMessage() {
-            // Your existing "No" button logic
-            disableNoButton();
-        }
-
-        function showNoOptionPanel() {
-            // Your existing logic
-        }
-
-        function showCatDancePanel() {
-            // Your existing logic
-        }
-
         // Add a function to disable the "No" button and make it jump
         function disableNoButton() {
             var noButton = document.querySelector('#mainPanel button:nth-child(2)');
@@ -61,4 +56,5 @@
             }, 500); // Allow button to be clicked again after 0.5 seconds
         }
     </script>
-</head>
+</body>
+</html>
