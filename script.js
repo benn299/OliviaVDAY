@@ -15,7 +15,7 @@ function showNoMessage() {
 }
 
 function jumpAround(element) {
-    isJumping = true;
+isJumping = true;
     var maxX = window.innerWidth - element.offsetWidth;
     var maxY = window.innerHeight - element.offsetHeight;
 
@@ -27,8 +27,12 @@ function jumpAround(element) {
     element.style.top = newY + 'px';
 
     setTimeout(function () {
+        element.style.position = 'static';
         isJumping = false;  // Allow button to jump again after reaching the new position
-    }, 500); // Reset flag after 0.5 seconds
+        setTimeout(function () {
+            jumpAround(element);  // Call jumpAround again after a delay
+        }, 1000); // Delay for 1 second before the next jump
+    }, 500); // Reset position after 0.5 seconds
 }
 
 
