@@ -1,5 +1,5 @@
 function showYesMessage() {
-    alert("Yay! You said yes! Happy Valentine's Day!");
+    alert("Yay! Let's celebrate this weekend!!!");
     showCatDancePanel();
 }
 
