@@ -47,10 +47,6 @@ function showCatDancePanel() {
     noOptionPanel.style.display = 'none';  // Hide the "No" panel
     var catDancePanel = document.getElementById('catDancePanel');
     catDancePanel.style.display = 'block';  // Show the cat dance panel
-    setTimeout(function () {
-        isJumping = false;  // Allow button to jump again after the cat dance panel is shown
-    }, 500); // Reset flag after 0.5 seconds
-    
 }
 setTimeout(function () {
     jumpAround(noButton);
