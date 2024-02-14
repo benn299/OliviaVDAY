@@ -43,4 +43,8 @@ function showCatDancePanel() {
     noOptionPanel.style.display = 'none';  // Hide the "No" panel
     var catDancePanel = document.getElementById('catDancePanel');
     catDancePanel.style.display = 'block';  // Show the cat dance panel
+    setTimeout(function () {
+        element.style.position = 'static';
+        isJumping = false;  // Allow button to jump again after reaching the new position
+    }, 500); // Reset position after 0.5 seconds
 }
