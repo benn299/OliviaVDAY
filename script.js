@@ -4,8 +4,14 @@ function showYesMessage() {
 }
 
 function showNoMessage() {
-    alert("Oh no! That's okay, maybe next time. Happy Valentine's Day!");
-    showNoOptionPanel();
+    // Your existing "No" button logic
+    var noButton = document.querySelector('#mainPanel button:nth-child(2)');
+    noButton.disabled = true;
+    noButton.classList.add('jumping-no');
+    setTimeout(function () {
+        noButton.disabled = false;
+        noButton.classList.remove('jumping-no');
+    }, 500); // Allow button to be clicked again after 0.5 seconds
 }
 
 function showNoOptionPanel() {
