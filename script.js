@@ -6,14 +6,24 @@ function showYesMessage() {
 function showNoMessage() {
     // Your existing "No" button logic
     var noButton = document.querySelector('#mainPanel button:nth-child(2)');
-    noButton.disabled = true;
-    noButton.classList.add('jumping-no');
-    setTimeout(function () {
-        noButton.disabled = false;
-        noButton.classList.remove('jumping-no');
-    }, 500); // Allow button to be clicked again after 0.5 seconds
+    jumpAround(noButton);
 }
 
+function jumpAround(element) {
+    var maxX = window.innerWidth - element.offsetWidth;
+    var maxY = window.innerHeight - element.offsetHeight;
+
+    var newX = Math.floor(Math.random() * maxX);
+    var newY = Math.floor(Math.random() * maxY);
+
+    element.style.position = 'absolute';
+    element.style.left = newX + 'px';
+    element.style.top = newY + 'px';
+
+    setTimeout(function () {
+        element.style.position = 'static';
+    }, 500); // Reset position after 0.5 seconds
+}
 function showNoOptionPanel() {
     document.getElementById('mainPanel').style.display = 'none';
     document.getElementById('noOptionPanel').style.display = 'block';
