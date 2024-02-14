@@ -1,9 +1,11 @@
 var noButton = document.querySelector('#mainPanel button:nth-child(2)');
 var isJumping = false;
+var jumpInterval;
 
 function showYesMessage() {
     alert("Yay! Let's celebrate this weekend!!!");
     showCatDancePanel();
+    stopJumping();
 }
 
 function showNoMessage() {
@@ -35,7 +37,10 @@ isJumping = true;
     }, 500); // Reset position after 0.5 seconds
 }
 
-
+function stopJumping() {
+    // Clear the jumpInterval to stop the continuous jumping
+    clearTimeout(jumpInterval);
+}
 function showCatDancePanel() {
     // Your logic to display the cat dance panel
     var noOptionPanel = document.getElementById('noOptionPanel');
