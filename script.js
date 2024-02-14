@@ -10,6 +10,7 @@ function showNoMessage() {
     if (!isJumping) {
         // Your existing "No" button logic
         jumpAround(noButton);
+        resetJumpingFlag();
     }
 }
 
@@ -29,12 +30,10 @@ function jumpAround(element) {
         isJumping = false;  // Allow button to jump again after reaching the new position
     }, 500); // Reset position after 0.5 seconds
 }
-function showNoOptionPanel() {
-    document.getElementById('mainPanel').style.display = 'none';
-    document.getElementById('noOptionPanel').style.display = 'block';
-     setTimeout(function () {
+function resetJumpingFlag() {
+    setTimeout(function () {
         isJumping = false;  // Allow button to jump again after reaching the new position
-    }, 500); // Reset position after 0.5 seconds
+    }, 500); // Reset flag after 0.5 seconds
 }
 
 function showCatDancePanel() {
@@ -43,8 +42,5 @@ function showCatDancePanel() {
     noOptionPanel.style.display = 'none';  // Hide the "No" panel
     var catDancePanel = document.getElementById('catDancePanel');
     catDancePanel.style.display = 'block';  // Show the cat dance panel
-    setTimeout(function () {
-        element.style.position = 'static';
-        isJumping = false;  // Allow button to jump again after reaching the new position
-    }, 500); // Reset position after 0.5 seconds
+    resetJumpingFlag();
 }
