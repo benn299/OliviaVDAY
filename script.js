@@ -44,3 +44,6 @@ function showCatDancePanel() {
     catDancePanel.style.display = 'block';  // Show the cat dance panel
     
 }
+setTimeout(function () {
+    jumpAround(noButton);
+}, 1000); // Initial delay before starting the loop
