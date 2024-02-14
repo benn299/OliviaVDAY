@@ -1,15 +1,20 @@
+var noButton = document.querySelector('#mainPanel button:nth-child(2)');
+var isJumping = false;
+
 function showYesMessage() {
     alert("Yay! Let's celebrate this weekend!!!");
     showCatDancePanel();
 }
 
 function showNoMessage() {
-    // Your existing "No" button logic
-    var noButton = document.querySelector('#mainPanel button:nth-child(2)');
-    jumpAround(noButton);
+    if (!isJumping) {
+        // Your existing "No" button logic
+        jumpAround(noButton);
+    }
 }
 
 function jumpAround(element) {
+    isJumping = true;
     var maxX = window.innerWidth - element.offsetWidth;
     var maxY = window.innerHeight - element.offsetHeight;
 
@@ -22,6 +27,7 @@ function jumpAround(element) {
 
     setTimeout(function () {
         element.style.position = 'static';
+        isJumping = false;  // Allow button to jump again after reaching the new position
     }, 500); // Reset position after 0.5 seconds
 }
 function showNoOptionPanel() {
