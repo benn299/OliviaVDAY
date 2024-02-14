@@ -28,10 +28,10 @@ isJumping = true;
     element.style.left = newX + 'px';
     element.style.top = newY + 'px';
 
-    setTimeout(function () {
+    jumpInterval = setTimeout(function () {
         element.style.position = 'static';
         isJumping = false;  // Allow button to jump again after reaching the new position
-        setTimeout(function () {
+        jumpInterval = setTimeout(function () {
             jumpAround(element);  // Call jumpAround again after a delay
         }, 1000); // Delay for 1 second before the next jump
     }, 500); // Reset position after 0.5 seconds
@@ -48,6 +48,3 @@ function showCatDancePanel() {
     var catDancePanel = document.getElementById('catDancePanel');
     catDancePanel.style.display = 'block';  // Show the cat dance panel
 }
-setTimeout(function () {
-    jumpAround(noButton);
-}, 1000); // Initial delay before starting the loop
