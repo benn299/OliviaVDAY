@@ -24,15 +24,13 @@ function jumpAround(element) {
     element.style.position = 'absolute';
     element.style.left = newX + 'px';
     element.style.top = newY + 'px';
-
-    setTimeout(function () {
-        element.style.position = 'static';
-        isJumping = false;  // Allow button to jump again after reaching the new position
-    }, 500); // Reset position after 0.5 seconds
 }
 function showNoOptionPanel() {
     document.getElementById('mainPanel').style.display = 'none';
     document.getElementById('noOptionPanel').style.display = 'block';
+     setTimeout(function () {
+        isJumping = false;  // Allow button to jump again after reaching the new position
+    }, 500); // Reset position after 0.5 seconds
 }
 
 function showCatDancePanel() {
