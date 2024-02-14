@@ -30,6 +30,9 @@ function showNoOptionPanel() {
 }
 
 function showCatDancePanel() {
-    document.getElementById('mainPanel').style.display = 'none';
-    document.getElementById('catDancePanel').style.display = 'block';
+    // Your logic to display the cat dance panel
+    var noOptionPanel = document.getElementById('noOptionPanel');
+    noOptionPanel.style.display = 'none';  // Hide the "No" panel
+    var catDancePanel = document.getElementById('catDancePanel');
+    catDancePanel.style.display = 'block';  // Show the cat dance panel
 }
