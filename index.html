@@ -1,29 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Page</title>
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
-    <title>Valentine's Day Proposal</title>
+
+    <script src="script.js"></script>
+    <style>
+        /* Existing styles */
+        .card {
+            /* Your card styles */
+        }
+
+        /* Add some styling for the jumping effect */
+        .jumping-no {
+            animation: jump 0.5s ease-out;
+        }
+
+        @keyframes jump {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+
+    <script>
+        // Existing JavaScript code
+        function showYesMessage() {
+            // Your existing "Yes" button logic
+        }
+
+        function showNoMessage() {
+            // Your existing "No" button logic
+            disableNoButton();
+        }
+
+        function showNoOptionPanel() {
+            // Your existing logic
+        }
+
+        function showCatDancePanel() {
+            // Your existing logic
+        }
+
+        // Add a function to disable the "No" button and make it jump
+        function disableNoButton() {
+            var noButton = document.querySelector('#mainPanel button:nth-child(2)');
+            noButton.disabled = true;
+            noButton.classList.add('jumping-no');
+            setTimeout(function () {
+                noButton.disabled = false;
+                noButton.classList.remove('jumping-no');
+            }, 500); // Allow button to be clicked again after 0.5 seconds
+        }
+    </script>
 </head>
-<body>
-
-<div id="mainPanel" class="card">
-    <div id="messagePanel">
-        <h2>Hey there! Will you be my Valentine?</h2>
-        <div id="buttonPanel">
-            <button onclick="showYesMessage()">Yes</button>
-            <button onclick="showNoMessage()">No</button>
-        </div>
-    </div>
-    <div id="noOptionPanel" class="card">
-        <p>Error: The no button is out of order. You have no choice but to refresh the page and press yes! </p>
-    </div>
-    <div id="catDancePanel" class="card" style="display: none;">
-        <img src="https://i.pinimg.com/originals/87/3c/fd/873cfd3a21c5b726c3a54f20f14d9c3a.gif" alt="Cute cat dance">
-    </div>
-</div>
-
-<script src="script.js"></script>
-</body>
-</html>
